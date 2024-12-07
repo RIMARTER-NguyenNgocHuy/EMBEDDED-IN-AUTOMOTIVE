@@ -6,6 +6,8 @@
 
 ## Bài 1: Setup project đầu tiên trên Keil C
 đầu tiên
+![image](https://github.com/user-attachments/assets/0efc336b-e86d-4141-bcd2-622b09de55b6)
+
 
 ## Bài 2: GPIO
 thứ 2
