@@ -1,2 +1,2 @@
 # EMBEDDED-IN-AUTOMOTIVE
-EMBEDDED IN AUTOMOTIVE github
+Bài 1: Setup project đầu tiên trên Keil C
