@@ -5,7 +5,12 @@
 - [Bài 4: Don't know yet](#bài-4-dont-know-yet)
 
 ## Bài 1: Setup project đầu tiên trên Keil C
-đầu tiên
+Quá trình: Chương trình C --> file.hex --> Vi điều khiển
+1. Cấp xung clock cho ngoại vi muốn sử
+  - GPIOD được kết nối với bus ABP2 nên định nghĩa và lấy giá trị địa chỉ là: địa chỉ bắt đầu của clock RCC 0x4002 1000 + address clock APB2 0x18 = 0x4002 1018.
+  - Bật xung clock cho chân GPIOD tại bit thứ 5 trong thanh ghi với kĩ thuật bitmask bằng cách dịch phải 5 lần với giá trị 1
+2. Cấu hình chức năng cho ngoại vi
+  - Sử dụng GPIOD 2 nên dùng thanh ghi CRL 
 
 ## Bài 2: GPIO
 thứ 2
