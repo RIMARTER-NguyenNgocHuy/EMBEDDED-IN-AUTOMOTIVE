@@ -19,11 +19,4 @@
    
 
 ## Bài 2: GPIO
-thứ 2
-
-## Bài 3: Don't know yet
-thứ 3
-
-## Bài 4: Don't know yet
-thứ 4
 
