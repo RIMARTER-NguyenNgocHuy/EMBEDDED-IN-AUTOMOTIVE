@@ -173,7 +173,7 @@ void delay(uint32_t timedelay) {
 }
 ```
 
-# Bài 3: Interrupt - Timer
+## Bài 3: Interrupt - Timer
 
 
    
