@@ -107,8 +107,7 @@
 
 ## Bài 2: GPIO
 - Dùng thư viện SPL để điều khiển ngoại vi GPIO thực hiện các chức năng như: Blink Led, kết hợp Nút nhấn để thay đổi trạng thái Led
-- Tổng quan các bước:
-  -- Bật xung clock cho ngoại vi muốn sử dụng --> Cấu hình chân --> Sủ dụng chức năng của ngoại vi
+- Tổng quan các bước: Bật xung clock cho ngoại vi muốn sử dụng --> Cấu hình chân --> Sủ dụng chức năng của ngoại vi
 
 
 
