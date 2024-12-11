@@ -146,7 +146,7 @@ int main() {
 
 void RCCconfig() {
 //    RCC->AHB1ENR |= 0x000001F8;
-		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC, ENABLE);
 }
 
 void GPIOconfig() {
@@ -154,7 +154,7 @@ void GPIOconfig() {
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
 	
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_13;
@@ -164,7 +164,7 @@ void GPIOconfig() {
 }
 
 void delay(uint32_t timedelay) {
-		uint32_t i;
+    uint32_t i;
     for (i = 0; i < timedelay; i++) {
         __asm("NOP");
     }
