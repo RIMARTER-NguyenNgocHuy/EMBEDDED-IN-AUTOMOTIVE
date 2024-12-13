@@ -233,7 +233,7 @@ void GPIOconfig() {
 void TIM_config(){
 	TIM_TimeBaseInitTypeDef TIM_InitStruct;
 	TIM_InitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
-	TIM_InitStruct.TIM_Prescaler = 10000 - 1;
+	TIM_InitStruct.TIM_Prescaler = 4200 - 1;
 	TIM_InitStruct.TIM_Period = 0xFFFF;
 	TIM_InitStruct.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseInit(TIM2, &TIM_InitStruct);
