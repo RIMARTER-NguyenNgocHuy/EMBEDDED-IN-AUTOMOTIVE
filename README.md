@@ -181,8 +181,20 @@ void delay(uint32_t timedelay) {
  		- Ngắt ngoài: khi có một sự kiện ngắt ở ngoài tác động đến chân GPIO của MCU như nút nhấn, nhận biết có ngắt là khi có sự biến đổi điện áp nào đó từ mức cao xuống mức thấp hoặc ngược lại.
    		- Ngắt timer: sử dụng bộ đếm Timer để nhận biết khi giá trị timer đếm tới khi nó bị tràn và reset lại giá trị khi bị tràn.
 		- Ngắt truyền thông: được sử dụng và xảy ra khi có sự truyền nhận tín hiệu của MCU với MCU khác hoặc với thiết bị khác qua các giao thức có trong MCU. Ví dụ như ta có 2 MCU cần gửi, nhận data với nhau. Lúc này ví dụ như MCU1 có chương trình 1 thực thi trong 2s - chương trình 2 thực thi trong 1s và MCU2 chương trình 1 là 1s - chương trình 2 1s, thì sẽ có sự chêch lệnh thời gian thực thi của 2 MCU dẫn đến MCU1 đã chạy đến hàm gửi data nhưng MCU2 đã chạy qua hàm nhận data vì sự chêch lệnh thời gian. Vì vậy cần có ngắt để khi có data từ MCU1 gửi đến MCU2 qua một giao thức nào đó thì chương trình của MCU2 sẽ tạm dừng hoạt động và nhảy đến hàm ngắt để gọi hàm nhận data. Khi thực hiện xong ngắt thì tiếp tục với chương trình chính của nó nhờ sự dẫn đường của thanh ghi PC.
-3. Timer.
+2. Timer (TIM).
 - Bộ địh thời, đếm thời gian qua việc đếm các chu kỳ xung clock được tạo từ bộ dao động hoặc có thể nhận tín hiệu clock từ các tín hiệu có xung bên ngoài.
+- Dùng TIM để tạo thời gian delay chính xác cho MCU. Với các bước: Cấp xung clock cho TIM, Cấu hình TIM, Sử dụng chức năng của TIM
+	- TIM_ClockDivision: cấu hình chia xung clock cho timer là TIM_CKD_DIV1, chia cho 1. Với STM32F4 giá trị chia xong là 100MHz
+ 	- TIM_Prescaler: cấu hình bộ chia tần số, với bao nhiêu chu kỳ xung clock thì sẽ đếm lên 1 lần hay với thời gian bao lâu là sẽ đếm lên 1
+  	- TIM_Period: cấu hình số lần đếm lên là bao nhiêu thì timer sẽ tràn, giá trị từ 0 đến 65535
+  	- TIM_CounterMode: cấu hình chế độ đếm cho timer, TIM_CounterMode_Up đếm lên
+  	- TIM_TimeBaseInit: hàm cấu hình các thông số đã set ở trên cho TIM
+  	- TIM_Cmd: hàm xác định bật hay tắt TIM.
+  	- Và viết thêm một hàm delay nhờ quá trình đếm của TIM.
+  		- TIM_SetCounter: đếm lên từ bao nhiêu, TIM_SetCounter(TIM2,0) --> chọn timer2 đếm từ 0
+  	 	- while(TIM_GetCounter(TIM2) < timedelay * 10): vòng lặp để chờ bằng cách đọc giá trị đếm và so sánh với giá trị mong muốn nhân thêm cho 10
+ 
+
 
 
 
