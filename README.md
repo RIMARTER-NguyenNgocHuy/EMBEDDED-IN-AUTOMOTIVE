@@ -174,6 +174,9 @@ void delay(uint32_t timedelay) {
 ```
 
 ## Bài 3: Interrupt và Timer
+- Interrupt là một cơ chế sự kiện có ngắt bên trong vi điều khiển hoặc ngắt ngoài. Interrupt yêu cầu MCU thực hiện một sự kiện xảy ra trong chương trình ngắt tại thời điểm nào đó đang chạy chương trình chính. Có nghĩa là khi ngắt xảy ra chương trình chính sẽ ngừng hoạt động và nhảy vào hàm ngắt để thực thi chương trình bên trong đó. Mỗi sự kiện ngắt sẽ có hàm phục vụ cho việc ngắt (ISR)
+	- Trong MCU ta có thanh ghi Program Counter (PC) sẽ chỉ đến địa chỉ thực thi tiếp theo của chương trình và lưu địa chỉ nhớ của lệnh tiếp theo cần thực thi. Đóng vai trò như một cái gì đó chỉ đường từ chương trình chính chuyển đến chương trình ISR và quay lại tiếp tục ở chương trình chính. Nói rõ hơn là trước khi có ngắt xảy ra PC chứa địa chỉ của lệnh tiếp theo mà chương trình sẽ thực thi. Nếu có ngắt xảy ra CPU sẽ tạm dừng chạy, lúc này thì PC sẽ lưu lại địa chỉ của lệnh đang thực thi, để lúc chạy ngắt xong có thể quay lại tại địa chỉ mà nó đã lưu ở trước đó. Và các địa chỉ trong bộ nhớ của ISR được xác định bởi vecto ngắt. Sau khi xử lý ngắt xong PC sẽ khôi phục từ stack là nơi địa chỉ của lệnh tiếp theo đã được lưu lại trước khi có ngắt. Để chương trình có thể tiếp tục chạy từ nơi nó tạm dừng để nhảy vào ISR.
+- Timer 
 
 
    
