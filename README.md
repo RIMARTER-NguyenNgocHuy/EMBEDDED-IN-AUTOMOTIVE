@@ -248,7 +248,7 @@ void delay_ms(uint32_t timedelay)
 }
 ```
 
-# Bài 4: Communication Protocols
+## Bài 4: Communication Protocols
 
 
    
