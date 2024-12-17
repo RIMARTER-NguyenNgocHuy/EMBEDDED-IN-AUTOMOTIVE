@@ -281,8 +281,8 @@ void delay_ms(uint32_t timedelay)
          	- Bit ACK: tín hiệu gửi từ slave cho master biết là nó đã nhận được tín hiệu thành công bằng cách đặt SDA xuống mức thấp
           	- 8 bit data: các biết chứa dữ liệu muốn gửi
           	- Stop bit: bit kết thúc frame truyền
-          - SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể gửi hoặc nhận tín hiệu
-          - SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock  
+	- SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể gửi hoặc nhận tín hiệu
+   	- SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock  
 
 
 
