@@ -267,7 +267,7 @@ void delay_ms(uint32_t timedelay)
   	- Thông số CPHA, chọn thời điểm bắt đầu đọc dữ liệu
   		- CPHA = 0, dữ liệu được đọc từ cạnh lên của xung clock chuyển từ mức 0 lên 1, thay đổi ở cạnh 
 		- CPHA = 1, dữ liệu được đọc từ cạnh xuống của xung clock chuyển từ mức 1 xuống 0, thay đổi ở cạnh lên
-2. Giao thức I2C
+### 2. Giao thức I2C
 - Inter-Integrated Circuit
 	- Giao tiếp nối tiếp. Master/Salve, một master nhiều slave
  	- Hoạt động bán song công, có thể truyền và nhận dữ liệu nhưng tại một thời điểm chỉ được phép nhận hoặc được phép gửi dữ liệu
@@ -283,7 +283,7 @@ void delay_ms(uint32_t timedelay)
 		- Stop bit: bit kết thúc frame truyền.
 	- SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể 	gửi hoặc nhận tín hiệu
    	- SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock  
-3. Giao thức UART
+### 3. Giao thức UART
 
 
 
