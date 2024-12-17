@@ -255,7 +255,7 @@ void delay_ms(uint32_t timedelay)
 	- Truyền nhận dữ liệu theo kiểu giao tiếp nối tiếp. Master/Slave, có thể 1 Master và nhiều Slave
  	- Hoạt động song công, có thể vừa nhận và truyền dữ liệu cùng một lúc
   	- Giao tiếp đồng bộ, tại một thời điểm cụ thể nhận hoặc gửi tiến hiệu
-   	- Bốn chân chức năng: CS, MOSI, MISO, SCK
+   	- Bốn dây chức năng: CS, MOSI, MISO, SCK
 - Cách thức hoạt động:
   	- SCK: chân tín hiệu xung clock, chân này sẽ tạo ra một chuỗi xung và sau đó theo định nghĩa của từng mức xung cao/thấp sẽ cho MCU biết khi nào cần gửi/nhận tín hiệu từ MCU khác. Việc này giúp ta đồng bộ 	được thời điểm nhận và gửi tín hiệu của 2 MCU với nhau
   	- MOSI (Master out Slave in): chân gửi tín hiệu từ Master tới Slave
@@ -267,9 +267,22 @@ void delay_ms(uint32_t timedelay)
   	- Thông số CPHA, chọn thời điểm bắt đầu đọc dữ liệu
   		- CPHA = 0, dữ liệu được đọc từ cạnh lên của xung clock chuyển từ mức 0 lên 1, thay đổi ở cạnh 
 		- CPHA = 1, dữ liệu được đọc từ cạnh xuống của xung clock chuyển từ mức 1 xuống 0, thay đổi ở cạnh lên
-   
-
 2. Giao thức I2C
+- Inter-Integrated Circuit
+	- Giao tiếp nối tiếp. Master/Salve, một master nhiều slave
+ 	- Hoạt động bán song công, có thể truyền và nhận dữ liệu nhưng tại một thời điểm chỉ được phép nhận hoặc được phép gửi dữ liệu
+  	- Giao tiếp đồng bộ tại một thời điểm
+  	- Hai dây chức năng: SDA, SCL
+- Cách thức hoạt động:
+	- Được xây dựng một frame truyền cụ thể để gửi dữ liệu theo format của nó. Start bit - 7 bit address - Bit control (R/W) - Bit ACK - 8 bit data - Stop bit
+   		- Start bit: bit bắt đầu để nhận biết
+     		- 7 bit address: 7 bit địa chỉ của slave được gửi từ master và căn cứ vào đó slave sẽ nhận biết được là master đang muốn giao tiếp với nó
+       		- Bit control (R/W): bit điều khiển để biết được master đang muốn gửi tín hiệu đến slave hay đọc tín hiệu từ slave
+         	- Bit ACK: tín hiệu gửi từ slave cho master biết là nó đã nhận được tín hiệu thành công bằng cách đặt SDA xuống mức thấp
+          	- 8 bit data: các biết chứa dữ liệu muốn gửi
+          	- Stop bit: bit kết thúc frame truyền
+          - SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể gửi hoặc nhận tín hiệu
+          - SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock  
 
 
 
