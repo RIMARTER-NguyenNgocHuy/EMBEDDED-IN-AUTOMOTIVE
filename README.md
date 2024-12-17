@@ -255,8 +255,13 @@ void delay_ms(uint32_t timedelay)
 	- Truyền nhận dữ liệu theo kiểu giao tiếp nối tiếp. Master/Slave, có thể 1 Master và nhiều Slave
  	- Hoạt động song công, có thể vừa nhận và truyền dữ liệu cùng một lúc
   	- Giao tiếp đồng bộ, tại một thời điểm cụ thể nhận hoặc gửi tiến hiệu
-   	- Bốn chân chức năng: CS, MOSI, MISO, SCK 
-   	     
+   	- Bốn chân chức năng: CS, MOSI, MISO, SCK
+- Cách thức hoạt động:
+  	- SCK: chân tín hiệu xung clock, chân này sẽ tạo ra một chuỗi xung và sau đó theo định nghĩa của từng mức xung cao/thấp sẽ cho MCU biết khi nào cần gửi/nhận tín hiệu từ MCU khác. Việc này giúp ta đồng bộ 	được thời điểm nhận và gửi tín hiệu của 2 MCU
+  	- MOSI (Master out Slave in): chân gửi tín hiệu từ Master tới Slave
+  	- MISO (Master in Slave out): chân nhận tín hiệu của Master từ Slave
+  	- CS: Nếu master muốn giao tiếp với slave nào thì sẽ kéo chân CS đó xuống mức thấp 0v
+  	- Thông số CPOL, quyết định trạng thái khi nhàn rỗi của chân SCK là 0 hay 1
 
    
 
