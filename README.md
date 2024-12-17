@@ -284,6 +284,18 @@ void delay_ms(uint32_t timedelay)
 	- SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể 	gửi hoặc nhận tín hiệu
    	- SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock  
 ### 3. Giao thức UART
-
-
+- Universal Asynchronous Receiver-Transmitter
+	- Giao tiếp nối tiếp, không đồng bộ
+  	- Giao tiếp chỉ 1 thiết bị với 1 thiết bị khác với nhau
+  	- Chế độ hoạt động song công
+  	- Hai chân giao tiếp: RX (chân nhận data), TX (chân truyền data)
+- Cách thức hoạt động:
+  	- Thứ nhất: vì chỉ có 2 chân RX, TX và không có chân đồng bộ xung clock nên phải cần đến bộ Timer để làm việc này -> Thời gian truyền chậm nên các ứng dụng có tính real time thì không được sử dụng UART
+  	- Kết nối truyền dữ liệu: chân TX bên gửi nối chân RX bên nhận hay RX1 nối TX2 , TX1 nối RX2 nên có thể hoạt động song công
+  	- Truyền dữ liệu theo một gói frame truyền: Start bit - Data bit - Parity bit - Stop bit
+		- Start bit: bit bắt đầu gói tin
+  		- Data bit: chứa dữ liệu muốn truyền đi thường gửi từ bit LSB (bit trọng số thấp) đến MSB (bit trọng số cao)
+  	 	- Parity bit: bit kiểm tra chẵn lẻ để phát hiện lỗi, nhược điểm là khi nếu vô tình có 2 bit đều sai thì trường hợp nó vẫn là lẻ hoặc chẵn và nó vẫn kiểm tra là dữ liệu hợp lệ
+  	  	- Stop bit: biết kết thúc của frame truyền để nhận biết
+  	- Thông số Baudrate là tốc độ truyền dữ liệu của UART được tính theo số lượng bit truyền được trong 1s
 
