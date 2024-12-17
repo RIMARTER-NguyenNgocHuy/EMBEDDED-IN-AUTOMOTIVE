@@ -277,7 +277,7 @@ void delay_ms(uint32_t timedelay)
 	- Được xây dựng một frame truyền cụ thể để gửi dữ liệu theo format của nó. Start bit - 7 bit address - Bit control (R/W) - Bit ACK - 8 bit data - Stop bit
    		- Start bit: bit bắt đầu để nhận biết
 		- 7 bit address: 7 bit địa chỉ của slave được gửi từ master và căn cứ vào đó slave sẽ nhận biết được là master đang muốn giao tiếp với nó
-    		- Bit control (R/W): bit điều khiển để biết được master đang muốn gửi tín hiệu đến slave hay đọc tín hiệu từ slave
+	- Bit control (R/W): bit điều khiển để biết được master đang muốn gửi tín hiệu đến slave hay đọc tín hiệu từ slave
     		- Bit ACK: tín hiệu gửi từ slave cho master biết là nó đã nhận được tín hiệu thành công bằng cách đặt SDA xuống mức thấp
     		- 8 bit data: các biết chứa dữ liệu muốn gửi
     		- Stop bit: bit kết thúc frame truyền
