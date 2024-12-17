@@ -250,7 +250,7 @@ void delay_ms(uint32_t timedelay)
 
 ## Bài 4: Communication Protocols
 - Quá trình truyền dữ liệu là việc trao đổi dữ liệu của hai MCU với nhau hay MCU với ngoại vi nào đó. Bằng cách coi như các dữ liệu là các tín hiệu điện áp cao/thấp thông qua các chân tín hiệu của MCU để giao tiếp với nhau. Nhưng vấn đề sinh ra là khi có các dữ liệu liền kề giống nhau như các bit 111 liên tiếp tương ướng với mức điệp áp 3.3v của MCU, thì làm sao để phân biệt các dữ liệu này với nhau và dữ liệu gửi trước có được gửi xong hay chưa, dữ liệu tới sau bắt đầu khi nào. Để giải quyết các vấn đề giao tiếp dữ liệu đó thì các chuẩn giao tiếp đã được sinh ra.
-1. Giao thức SPI
+### 1. Giao thức SPI
 - Serial Peripheral Interface
 	- Truyền nhận dữ liệu theo kiểu giao tiếp nối tiếp. Master/Slave, có thể 1 Master và nhiều Slave
  	- Hoạt động song công, có thể vừa nhận và truyền dữ liệu cùng một lúc
