@@ -283,6 +283,7 @@ void delay_ms(uint32_t timedelay)
 		- Stop bit: bit kết thúc frame truyền.
 	- SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể 	gửi hoặc nhận tín hiệu
    	- SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock  
+3. Giao thức UART
 
 
 
