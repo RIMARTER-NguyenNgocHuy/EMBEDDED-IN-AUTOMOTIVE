@@ -250,21 +250,26 @@ void delay_ms(uint32_t timedelay)
 
 ## Bài 4: Communication Protocols
 - Quá trình truyền dữ liệu là việc trao đổi dữ liệu của hai MCU với nhau hay MCU với ngoại vi nào đó. Bằng cách coi như các dữ liệu là các tín hiệu điện áp cao/thấp thông qua các chân tín hiệu của MCU để giao tiếp với nhau. Nhưng vấn đề sinh ra là khi có các dữ liệu liền kề giống nhau như các bit 111 liên tiếp tương ướng với mức điệp áp 3.3v của MCU, thì làm sao để phân biệt các dữ liệu này với nhau và dữ liệu gửi trước có được gửi xong hay chưa, dữ liệu tới sau bắt đầu khi nào. Để giải quyết các vấn đề giao tiếp dữ liệu đó thì các chuẩn giao tiếp đã được sinh ra.
-1. Giao tiếp SPI
+1. Giao thức SPI
 - Serial Peripheral Interface
 	- Truyền nhận dữ liệu theo kiểu giao tiếp nối tiếp. Master/Slave, có thể 1 Master và nhiều Slave
  	- Hoạt động song công, có thể vừa nhận và truyền dữ liệu cùng một lúc
   	- Giao tiếp đồng bộ, tại một thời điểm cụ thể nhận hoặc gửi tiến hiệu
    	- Bốn chân chức năng: CS, MOSI, MISO, SCK
 - Cách thức hoạt động:
-  	- SCK: chân tín hiệu xung clock, chân này sẽ tạo ra một chuỗi xung và sau đó theo định nghĩa của từng mức xung cao/thấp sẽ cho MCU biết khi nào cần gửi/nhận tín hiệu từ MCU khác. Việc này giúp ta đồng bộ 	được thời điểm nhận và gửi tín hiệu của 2 MCU
+  	- SCK: chân tín hiệu xung clock, chân này sẽ tạo ra một chuỗi xung và sau đó theo định nghĩa của từng mức xung cao/thấp sẽ cho MCU biết khi nào cần gửi/nhận tín hiệu từ MCU khác. Việc này giúp ta đồng bộ 	được thời điểm nhận và gửi tín hiệu của 2 MCU với nhau
   	- MOSI (Master out Slave in): chân gửi tín hiệu từ Master tới Slave
   	- MISO (Master in Slave out): chân nhận tín hiệu của Master từ Slave
   	- CS: Nếu master muốn giao tiếp với slave nào thì sẽ kéo chân CS đó xuống mức thấp 0v
   	- Thông số CPOL, quyết định trạng thái khi nhàn rỗi của chân SCK là 0 hay 1
-
+  		- CPOL = 0, xung clock ở mức 0v khi ko hoạt động -> khi nghỉ, SCK = 0
+  	 	- CPOL = 1, xung clock ở mức cao khi hoạt động -> khi nghỉ, SCK = 1
+  	- Thông số CPHA, chọn thời điểm bắt đầu đọc dữ liệu
+  		- CPHA = 0, dữ liệu được đọc từ cạnh lên của xung clock chuyển từ mức 0 lên 1, thay đổi ở cạnh 
+		- CPHA = 1, dữ liệu được đọc từ cạnh xuống của xung clock chuyển từ mức 1 xuống 0, thay đổi ở cạnh lên
    
 
+2. Giao thức I2C
 
 
 
