@@ -304,4 +304,4 @@ Quá trình truyền dữ liệu là việc trao đổi dữ liệu của hai MC
   	- Thông số Baudrate là tốc độ truyền dữ liệu của UART được tính theo số lượng bit truyền được trong 1s
  
   
-Bài 5: SPI
+## Bài 5: SPI
