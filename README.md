@@ -3,6 +3,7 @@
 - [Bài 2: GPIO](#bài-2-gpio)
 - [Bài 3: Interrupt và Timer](#bài-3-interrupt-và-timer)
 - [Bài 4: Communication Protocols](#bài-4-communication-protocols)
+- [Bài 5: SPI](#bài-5-spi)
 
 
 ## Bài 1: Setup project đầu tiên trên Keil C
@@ -105,6 +106,7 @@
     }
     ```
 
+
 ## Bài 2: GPIO
 - Dùng thư viện SPL để điều khiển ngoại vi GPIO trên MCU STM32F412RET6 thực hiện các chức năng như: Blink Led, kết hợp Nút nhấn để thay đổi trạng thái Led.
 - Tổng quan các bước: Bật xung clock cho ngoại vi muốn sử dụng --> Cấu hình chân --> Sủ dụng chức năng của ngoại vi.
@@ -173,6 +175,7 @@ void delay(uint32_t timedelay) {
     }
 }
 ```
+
 
 ## Bài 3: Interrupt và Timer
 1. Interrupt.
@@ -248,6 +251,7 @@ void delay_ms(uint32_t timedelay)
 }
 ```
 
+
 ## Bài 4: Communication Protocols
 Quá trình truyền dữ liệu là việc trao đổi dữ liệu của hai MCU với nhau hay MCU với ngoại vi nào đó. Bằng cách coi như các dữ liệu là các tín hiệu điện áp cao/thấp thông qua các chân tín hiệu của MCU để giao tiếp với nhau. Nhưng vấn đề sinh ra là khi có các dữ liệu liền kề giống nhau như các bit 111 liên tiếp tương ướng với mức điệp áp 3.3v của MCU, thì làm sao để phân biệt các dữ liệu này với nhau và dữ liệu gửi trước có được gửi xong hay chưa, dữ liệu tới sau bắt đầu khi nào. Để giải quyết các vấn đề giao tiếp dữ liệu đó thì các chuẩn giao tiếp đã được sinh ra.
 ### 1. Giao thức SPI
@@ -298,4 +302,6 @@ Quá trình truyền dữ liệu là việc trao đổi dữ liệu của hai MC
   	 	- Parity bit: bit kiểm tra chẵn lẻ để phát hiện lỗi, nhược điểm là khi nếu vô tình có 2 bit đều sai thì trường hợp nó vẫn là lẻ hoặc chẵn và nó vẫn kiểm tra là dữ liệu hợp lệ
   	  	- Stop bit: biết kết thúc của frame truyền để nhận biết
   	- Thông số Baudrate là tốc độ truyền dữ liệu của UART được tính theo số lượng bit truyền được trong 1s
-
+ 
+  
+Bài 5: SPI
