@@ -278,7 +278,7 @@ void delay_ms(uint32_t timedelay)
    		- Start bit: bit bắt đầu để nhận biết.
 		- 7 bit address: 7 bit địa chỉ của slave được gửi từ master và căn cứ vào đó slave sẽ nhận biết được là master đang muốn giao tiếp với nó.
 		- Bit control (R/W): bit điều khiển để biết được master đang muốn gửi tín hiệu đến slave hay đọc tín hiệu từ slave.
-    		- Bit ACK: tín hiệu gửi từ slave cho master biết là nó đã nhận được tín hiệu thành công bằng cách đặt SDA xuống mức thấp.
+		- Bit ACK: tín hiệu gửi từ slave cho master biết là nó đã nhận được tín hiệu thành công bằng cách đặt SDA xuống mức thấp.
     		- 8 bit data: các biết chứa dữ liệu muốn gửi.
     		- Stop bit: bit kết thúc frame truyền.
 	- SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể 	gửi hoặc nhận tín hiệu
