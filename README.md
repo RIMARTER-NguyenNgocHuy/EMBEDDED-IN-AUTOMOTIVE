@@ -285,8 +285,9 @@ Quá trình truyền dữ liệu là việc trao đổi dữ liệu của hai MC
 		- Bit ACK: tín hiệu gửi từ slave cho master biết là nó đã nhận được tín hiệu thành công bằng cách đặt SDA xuống mức thấp.
 		- 8 bit data: các biết chứa dữ liệu muốn gửi.
 		- Stop bit: bit kết thúc frame truyền.
-	- SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể 	gửi hoặc nhận tín hiệu
-   	- SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock  
+	- SDA: chân data chứ dữ liệu muốn truyền đi từ master đến slave, từ slave đến master. Vì mỗi I2C chỉ có một dây data thôi nên tại một thời điểm chỉ có thể gửi hoặc nhận tín hiệu
+   	- SCL: chân đồng bộ tín hiệu từ các mức tín hiệu của xung clock.
+   	- Ngoài ra 2 chân giao tiếp SDA và SCL còn được mắc với điện trở lên nguồn để có thể đặt trạng thái, không bị tình trạng thả trôi đường dây.
 ### 3. Giao thức UART
 - Universal Asynchronous Receiver-Transmitter
 	- Giao tiếp nối tiếp, không đồng bộ
